@@ -4,7 +4,7 @@ A curated learning hub for AI-curious explorers.
 Handpicked free AI resources to help you learn, build, and explore the future.
 
 🌐 Live site: https://kristina-ai-learning-library.vercel.app/  
-🧩 Built with Google AI Studio 
+🧩 Built with Google AI Studio  
 🚀 Deployed on Vercel
 
 
