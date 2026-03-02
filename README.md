@@ -37,5 +37,5 @@ This project contains everything you need to run the app on your local machine.
 2. Run the app:
    `npm run dev`
 
-## Run app in AI Studio
+## ☁️ Run app in AI Studio
 https://ai.studio/apps/fdba1c8c-630b-45dd-8d21-e27484b67f74
