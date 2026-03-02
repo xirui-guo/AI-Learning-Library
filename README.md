@@ -7,13 +7,11 @@ Handpicked free AI resources to help you learn, build, and explore the future.
 🧩 Built with Google AI Studio: 
 🚀 Deployed on Vercel
 
----
 
 ## 📸 Preview
 
-![Kristina's AI Library Preview](./assets/preview.png)
+![Kristina's AI Library Preview](./public/preview.png)
 
----
 
 ## ✨ About This Project
 
@@ -25,8 +23,6 @@ This project serves as both:
 - a personal knowledge hub
 - a public learning resource
 - a portfolio project
-
----
 
 
 ## 🚀 Run Locally
