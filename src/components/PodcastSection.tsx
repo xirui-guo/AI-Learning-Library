@@ -4,16 +4,20 @@ import { Mic, ExternalLink, ChevronDown } from 'lucide-react';
 import { podcasts, PodcastResource } from '../data';
 
 export default function PodcastSection() {
-  // Group podcasts by name (author)
-  const groupedPodcasts = podcasts.reduce((acc, podcast) => {
+  const [activeTab, setActiveTab] = useState<'YouTube' | 'Xiaoyuzhou'>('YouTube');
+  const [expandedAuthors, setExpandedAuthors] = useState<string[]>([]);
+
+  // Filter podcasts by active platform
+  const filteredPodcasts = podcasts.filter(p => p.platform === activeTab);
+
+  // Group filtered podcasts by name (author)
+  const groupedPodcasts = filteredPodcasts.reduce((acc, podcast) => {
     if (!acc[podcast.name]) {
       acc[podcast.name] = [];
     }
     acc[podcast.name].push(podcast);
     return acc;
   }, {} as Record<string, PodcastResource[]>);
-
-  const [expandedAuthors, setExpandedAuthors] = useState<string[]>([]);
 
   const toggleAuthor = (author: string) => {
     setExpandedAuthors(prev =>
@@ -28,10 +32,47 @@ export default function PodcastSection() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 text-left">
           <h2 className="font-serif text-4xl text-charcoal-900 mb-4">Podcasts</h2>
-          <p className="text-charcoal-600">Deep conversations and daily updates to keep you in the loop.</p>
+          <p className="text-charcoal-600 mb-8">Deep conversations and daily updates to keep you in the loop.</p>
+
+          <div className="flex gap-8 border-b border-cream-200">
+            <button
+              onClick={() => setActiveTab('YouTube')}
+              className={`pb-3 text-lg font-medium transition-colors relative ${
+                activeTab === 'YouTube' ? 'text-charcoal-900' : 'text-charcoal-400 hover:text-charcoal-600'
+              }`}
+            >
+              YouTube
+              {activeTab === 'YouTube' && (
+                <motion.div
+                  layoutId="podcastTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-charcoal-900"
+                />
+              )}
+            </button>
+            <button
+              onClick={() => setActiveTab('Xiaoyuzhou')}
+              className={`pb-3 text-lg font-medium transition-colors relative ${
+                activeTab === 'Xiaoyuzhou' ? 'text-charcoal-900' : 'text-charcoal-400 hover:text-charcoal-600'
+              }`}
+            >
+              小宇宙
+              {activeTab === 'Xiaoyuzhou' && (
+                <motion.div
+                  layoutId="podcastTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-charcoal-900"
+                />
+              )}
+            </button>
+          </div>
         </div>
 
-        <div className="space-y-4">
+        <motion.div 
+          key={activeTab}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="space-y-4"
+        >
           {Object.entries(groupedPodcasts).map(([author, episodes]) => (
             <div key={author} className="bg-white rounded-2xl shadow-sm border border-cream-200 overflow-hidden">
               <button
@@ -93,7 +134,7 @@ export default function PodcastSection() {
               </AnimatePresence>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

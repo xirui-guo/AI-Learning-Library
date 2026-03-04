@@ -15,6 +15,7 @@ export interface PodcastResource {
   description: string;
   startWith: string;
   link: string;
+  platform: 'YouTube' | 'Xiaoyuzhou';
 }
 
 export interface PersonResource {
@@ -55,15 +56,6 @@ export const videos: VideoResource[] = [
     tags: ['Founder Interview', 'Practical Tutorial']
   },
   {
-    id: '2',
-    title: 'Inside How the Claude Code Team Ships at Lightning Speed | Cat Wu',
-    description: 'Cat Wu shares insights into how the Claude Code team operates, ships features quickly, and maintains high quality.',
-    channel: 'Peter Yang',
-    duration: '45:30',
-    youtubeId: 'jmHBMtpR36M',
-    tags: ['Vibe Coding', 'Practical Tutorial']
-  },
-  {
     id: '3',
     title: 'Helping Founders Go Direct in a New Era of PR & Comms with Lulu Cheng Meservey',
     description: 'Lulu Cheng Meservey discusses modern PR strategies for founders and how to communicate effectively in the AI era.',
@@ -81,21 +73,24 @@ export const podcasts: PodcastResource[] = [
     name: 'Lenny\'s Podcast',
     description: 'How to hire the best people | Nikhyl Singhal (Meta, Google, Credit Karma)',
     startWith: 'Watch on YouTube',
-    link: 'https://www.youtube.com/watch?v=We7BZVKbCVw'
+    link: 'https://www.youtube.com/watch?v=We7BZVKbCVw',
+    platform: 'YouTube'
   },
   {
     id: '2',
     name: 'Lenny\'s Podcast',
     description: 'How to fire people with grace, work through conflict, and build a high-performing team | Matt Mochary',
     startWith: 'Watch on YouTube',
-    link: 'https://www.youtube.com/watch?v=6qAB6aUMIeA'
+    link: 'https://www.youtube.com/watch?v=6qAB6aUMIeA',
+    platform: 'YouTube'
   },
   {
     id: '3',
     name: 'Lenny\'s Podcast',
     description: 'How to validate your startup idea | Y Combinator',
     startWith: 'Watch on YouTube',
-    link: 'https://www.youtube.com/watch?v=qbvY0dQgSJ4'
+    link: 'https://www.youtube.com/watch?v=qbvY0dQgSJ4',
+    platform: 'YouTube'
   },
   // 十字路口 Episodes
   {
@@ -103,14 +98,16 @@ export const podcasts: PodcastResource[] = [
     name: '十字路口',
     description: 'AI时代是谁的黄金时代？｜和张咋啦聊：文科生、积极行动、爆款的规律、普通人也能赢',
     startWith: 'Listen on Xiaoyuzhou',
-    link: 'https://www.xiaoyuzhoufm.com/episode/695af1289b7892496e9811cb'
+    link: 'https://www.xiaoyuzhoufm.com/episode/695af1289b7892496e9811cb',
+    platform: 'Xiaoyuzhou'
   },
   {
     id: '5',
     name: '十字路口',
     description: 'Vibe Coding 下半场：四大天王，和想赢的人｜对话朱广翔：百度秒哒产品总经理',
     startWith: 'Listen on Xiaoyuzhou',
-    link: 'https://www.xiaoyuzhoufm.com/episode/6985820dc78b823892eb4642'
+    link: 'https://www.xiaoyuzhoufm.com/episode/6985820dc78b823892eb4642',
+    platform: 'Xiaoyuzhou'
   },
   // 张小珺Jun Episode
   {
@@ -118,7 +115,67 @@ export const podcasts: PodcastResource[] = [
     name: '张小珺Jun',
     description: '128. Manus决定出售前最后的访谈：啊，这奇幻的2025年漂流啊…',
     startWith: 'Listen on Xiaoyuzhou',
-    link: 'https://www.xiaoyuzhoufm.com/episode/695331cb2db086f897b50ea9'
+    link: 'https://www.xiaoyuzhoufm.com/episode/695331cb2db086f897b50ea9',
+    platform: 'Xiaoyuzhou'
+  },
+  // Peter Yang Episode
+  {
+    id: '7',
+    name: 'Peter Yang',
+    description: '7 Counterintuitive Product Lessons from Anthropic\'s Head of Product | Ami Vora',
+    startWith: 'Watch on YouTube',
+    link: 'https://www.youtube.com/watch?v=Vp2BsJNVFqQ',
+    platform: 'YouTube'
+  },
+  {
+    id: '13',
+    name: 'Peter Yang',
+    description: 'Inside How the Claude Code Team Ships at Lightning Speed | Cat Wu',
+    startWith: 'Watch on YouTube',
+    link: 'https://www.youtube.com/watch?v=jmHBMtpR36M',
+    platform: 'YouTube'
+  },
+  // 十字路口 Additional Episodes
+  {
+    id: '8',
+    name: '十字路口',
+    description: '他看到的未来，和我们有什么不一样？| 对话18岁的涂津豪：DeepSeek 前实习生、阿里数竞 AI 组冠军',
+    startWith: 'Listen on Xiaoyuzhou',
+    link: 'https://www.xiaoyuzhoufm.com/episode/697c3998073030367a6ee5ef',
+    platform: 'Xiaoyuzhou'
+  },
+  {
+    id: '9',
+    name: '十字路口',
+    description: '偏执、野心，与一副 AI 眼镜：顶级产品经理的底层燃料｜对谈理想 SVP 范皓宇',
+    startWith: 'Listen on Xiaoyuzhou',
+    link: 'https://www.xiaoyuzhoufm.com/episode/696b6b3a109824f9e1fe90e2',
+    platform: 'Xiaoyuzhou'
+  },
+  {
+    id: '10',
+    name: '十字路口',
+    description: '2026，AI视频「大年」将至｜对谈OiiOii创始人闹闹：亲历微信与字节后，如何抓住下一波机会？',
+    startWith: 'Listen on Xiaoyuzhou',
+    link: 'https://www.xiaoyuzhoufm.com/episode/695d9741c1e012a7abb9ebc2',
+    platform: 'Xiaoyuzhou'
+  },
+  // 硅谷101 Episodes
+  {
+    id: '11',
+    name: '硅谷101',
+    description: 'E224｜深度拆解Clawdbot，为何它能成为2026年第一个现象级产品？',
+    startWith: 'Listen on Xiaoyuzhou',
+    link: 'https://www.xiaoyuzhoufm.com/episode/69828c85a712301410e31643',
+    platform: 'Xiaoyuzhou'
+  },
+  {
+    id: '12',
+    name: '硅谷101',
+    description: 'E227｜美国医疗市场AI争夺战：巨头押注，创业公司能赢吗？',
+    startWith: 'Listen on Xiaoyuzhou',
+    link: 'https://www.xiaoyuzhoufm.com/episode/69a77745f44b398f59390e48',
+    platform: 'Xiaoyuzhou'
   }
 ];
 
